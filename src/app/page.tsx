@@ -143,7 +143,15 @@ export default function HomePage() {
       </div>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center bg-linear-to-br from-green-50 via-white to-green-100">
+      <section 
+        className="relative min-h-screen flex items-center justify-center bg-linear-to-br from-green-50 via-white to-green-100"
+        style={{
+          backgroundImage: `linear-gradient(rgba(240, 253, 244, 0.4), rgba(255, 255, 255, 0.6), rgba(240, 253, 244, 0.4)), url('/bg-1.png')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -151,7 +159,7 @@ export default function HomePage() {
             transition={{ duration: 0.8 }}
           >
             {/* Main Title */}
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold mb-6 text-gray-900">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold mb-6 text-gray-900" style={{ textShadow: '2px 2px 5px grey' }}>
               <span className="block">24th Asoka Group</span>
               <span className="block text-green-600 text-4xl md:text-5xl lg:text-6xl mt-2">
                 Bharat Scouts & Guides
@@ -160,7 +168,7 @@ export default function HomePage() {
             
             {/* Subtitle */}
             <div className="mb-8">
-              <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading font-bold text-gray-800 mb-4">
+              <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading font-bold text-gray-800 mb-4" style={{ textShadow: '2px 2px 5px grey' }}>
                 <span className="block text-green-700">Serving Community</span>
                 <PointerHighlight containerClassName="inline-block">
                   <span className="text-purple-600">Protecting Nature</span>
@@ -170,10 +178,10 @@ export default function HomePage() {
             </div>
             
             {/* Description */}
-            <p className="text-lg md:text-xl mb-4 text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl mb-4 text-gray-600 max-w-4xl mx-auto leading-relaxed" style={{ textShadow: '2px 2px 5px grey' }}>
               Since 1936, empowering youth through adventure, service, and environmental stewardship
             </p>
-            <p className="text-base md:text-lg mb-8 text-gray-500 font-medium">
+            <p className="text-base md:text-lg mb-8 text-gray-500 font-medium" style={{ textShadow: '2px 2px 5px grey' }}>
               South Calcutta  WOSM Member  85+ Years of Excellence
             </p>
           </motion.div>
@@ -261,7 +269,15 @@ export default function HomePage() {
       </section>
 
       {/* Featured Projects Section */}
-      <section className="py-20 bg-linear-to-b from-green-50 to-white">
+      <section 
+        className="py-20 bg-linear-to-b from-green-50 to-white"
+        style={{
+          backgroundImage: `linear-gradient(rgba(240, 253, 244, 0.5), rgba(255, 255, 255, 0.7)), url('/bg-2.png')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

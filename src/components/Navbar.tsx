@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { Menu, X, Phone, Mail, Star, Compass, TreePine, ChevronDown, Users, Handshake, Heart } from 'lucide-react'
+import { Menu, X, Phone, Mail, Star, Compass, TreePine, ChevronDown, ChevronRight, Users, Handshake, Heart } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { motion, AnimatePresence } from 'framer-motion'
 
@@ -73,6 +73,7 @@ export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
+  const [expandedMobileSection, setExpandedMobileSection] = useState<string | null>(null)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -284,58 +285,114 @@ export function Navbar() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.2 }}
-              className="lg:hidden bg-white border-t border-gray-100"
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              className="lg:hidden bg-white border-t border-gray-100 shadow-lg"
             >
-              <div className="px-4 py-4 space-y-2">
+              <div className="px-4 py-4 space-y-1 max-h-[70vh] overflow-y-auto">
                 {navigation.map((item) => (
                   <div key={item.name}>
-                    <Link
-                      href={item.href}
-                      className="block text-gray-700 hover:text-green-600 hover:bg-gray-50 px-4 py-3 rounded-lg text-base font-medium transition-colors"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      {item.name}
-                    </Link>
-                    {/* Mobile dropdown items */}
-                    {item.hasDropdown && item.dropdownItems && (
-                      <div className="ml-4 mt-2 space-y-2">
-                        {item.dropdownItems.map((dropdownItem) => {
-                          const IconComponent = dropdownItem.icon
-                          return (
-                            <Link
-                              key={dropdownItem.name}
-                              href={dropdownItem.href}
-                              className="flex items-center space-x-3 text-gray-600 hover:text-green-600 hover:bg-gray-50 px-3 py-2 rounded-lg text-sm transition-colors"
-                              onClick={() => setIsMobileMenuOpen(false)}
-                            >
-                              <div className={cn(
-                                "w-8 h-8 rounded-lg bg-linear-to-br flex items-center justify-center",
-                                dropdownItem.color
-                              )}>
-                                <IconComponent className="h-4 w-4 text-white" />
-                              </div>
-                              <div>
-                                <div className="font-medium">{dropdownItem.name}</div>
-                                {'ageRange' in dropdownItem && (
-                                  <div className="text-xs text-gray-500">{dropdownItem.ageRange}</div>
-                                )}
-                                {'details' in dropdownItem && (
-                                  <div className="text-xs text-gray-500">{dropdownItem.details}</div>
-                                )}
-                              </div>
-                            </Link>
-                          )
-                        })}
-                      </div>
+                    {/* Main navigation item */}
+                    {item.hasDropdown ? (
+                      <button
+                        onClick={() => setExpandedMobileSection(
+                          expandedMobileSection === item.name ? null : item.name
+                        )}
+                        className="w-full flex items-center justify-between text-gray-700 hover:text-green-600 hover:bg-gray-50 px-4 py-3 rounded-lg text-base font-medium transition-colors"
+                      >
+                        <span>{item.name}</span>
+                        <motion.div
+                          animate={{ rotate: expandedMobileSection === item.name ? 90 : 0 }}
+                          transition={{ duration: 0.2 }}
+                        >
+                          <ChevronRight className="h-5 w-5" />
+                        </motion.div>
+                      </button>
+                    ) : (
+                      <Link
+                        href={item.href}
+                        className="block text-gray-700 hover:text-green-600 hover:bg-gray-50 px-4 py-3 rounded-lg text-base font-medium transition-colors"
+                        onClick={() => {
+                          setIsMobileMenuOpen(false)
+                          setExpandedMobileSection(null)
+                        }}
+                      >
+                        {item.name}
+                      </Link>
                     )}
+
+                    {/* Expandable dropdown items */}
+                    <AnimatePresence>
+                      {item.hasDropdown && item.dropdownItems && expandedMobileSection === item.name && (
+                        <motion.div
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: "auto" }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.2, ease: "easeOut" }}
+                          className="overflow-hidden"
+                        >
+                          <div className="ml-4 mt-2 mb-3 space-y-1 bg-gray-50 rounded-lg p-2">
+                            {/* Main section link */}
+                            <Link
+                              href={item.href}
+                              className="flex items-center text-green-600 hover:text-green-700 hover:bg-white px-3 py-2 rounded-md text-sm font-medium transition-colors"
+                              onClick={() => {
+                                setIsMobileMenuOpen(false)
+                                setExpandedMobileSection(null)
+                              }}
+                            >
+                              View All {item.name}
+                            </Link>
+                            
+                            {/* Divider */}
+                            <div className="border-t border-gray-200 my-2"></div>
+                            
+                            {/* Individual dropdown items */}
+                            {item.dropdownItems.map((dropdownItem) => {
+                              const IconComponent = dropdownItem.icon
+                              return (
+                                <Link
+                                  key={dropdownItem.name}
+                                  href={dropdownItem.href}
+                                  className="flex items-center space-x-3 text-gray-600 hover:text-green-600 hover:bg-white px-3 py-2 rounded-md text-sm transition-colors"
+                                  onClick={() => {
+                                    setIsMobileMenuOpen(false)
+                                    setExpandedMobileSection(null)
+                                  }}
+                                >
+                                  <div className={cn(
+                                    "w-8 h-8 rounded-lg bg-linear-to-br flex items-center justify-center shrink-0",
+                                    dropdownItem.color
+                                  )}>
+                                    <IconComponent className="h-4 w-4 text-white" />
+                                  </div>
+                                  <div className="flex-1 min-w-0">
+                                    <div className="font-medium text-gray-800 truncate">{dropdownItem.name}</div>
+                                    {'ageRange' in dropdownItem && (
+                                      <div className="text-xs text-gray-500 truncate">{dropdownItem.ageRange}</div>
+                                    )}
+                                    {'details' in dropdownItem && (
+                                      <div className="text-xs text-gray-500 truncate">{dropdownItem.details}</div>
+                                    )}
+                                  </div>
+                                </Link>
+                              )
+                            })}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </div>
                 ))}
-                <div className="pt-4 border-t border-gray-100">
+                
+                {/* Donate button */}
+                <div className="pt-4 border-t border-gray-100 mt-4">
                   <Link
                     href="/donate"
-                    className="bg-green-600 hover:bg-green-700 text-white text-center px-4 py-3 rounded-lg text-base font-semibold transition-colors flex items-center justify-center space-x-2"
-                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="bg-green-600 hover:bg-green-700 text-white text-center px-4 py-3 rounded-lg text-base font-semibold transition-colors flex items-center justify-center space-x-2 shadow-md"
+                    onClick={() => {
+                      setIsMobileMenuOpen(false)
+                      setExpandedMobileSection(null)
+                    }}
                   >
                     <Heart className="h-4 w-4" />
                     <span>Donate Now</span>
