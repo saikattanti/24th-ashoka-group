@@ -29,9 +29,13 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* About Section */}
           <div className="space-y-4">
-            <div className="flex items-center space-x-2">
-              <div className="h-8 w-8 bg-white rounded-full flex items-center justify-center">
-                <Compass className="h-5 w-5 text-primary-600" />
+            <div className="flex items-center space-x-3">
+              <div className="h-16 w-16 bg-white rounded-lg p-1 shrink-0">
+                <img 
+                  src="/logo-removebg.png" 
+                  alt="24th Asoka Group Logo" 
+                  className="h-full w-full object-contain"
+                />
               </div>
               <div>
                 <h3 className="text-lg font-heading font-bold">24th Asoka Group</h3>

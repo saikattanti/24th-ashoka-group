@@ -109,6 +109,18 @@ export default function AboutPage() {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
+            {/* Logo */}
+            <div className="mb-8">
+              <div className="mx-auto w-16 h-16 md:w-20 md:h-20 mb-4">
+                <img 
+                  src="/logo-removebg.png" 
+                  alt="24th Asoka Group Official Logo" 
+                  className="w-full h-full object-contain drop-shadow-lg"
+                  style={{ filter: 'drop-shadow(2px 2px 6px rgba(0, 0, 0, 0.3))' }}
+                />
+              </div>
+            </div>
+
             <h1 className="text-4xl md:text-6xl font-heading font-bold mb-6">
               Our <PointerHighlight containerClassName="inline-block">
                 <span className="text-green-400">Story</span>

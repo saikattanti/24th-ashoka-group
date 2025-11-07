@@ -117,6 +117,13 @@ export function Navbar() {
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-3 group">
+              <div className="h-16 w-16 shrink-0">
+                <img 
+                  src="/logo-removebg.png" 
+                  alt="24th Asoka Group Logo" 
+                  className="h-full w-full object-contain group-hover:scale-105 transition-transform duration-200"
+                />
+              </div>
               <div className="flex flex-col">
                 <div className="text-xl font-bold text-gray-900 group-hover:text-green-600 transition-colors">
                   24th Asoka Group
@@ -289,6 +296,21 @@ export function Navbar() {
               className="lg:hidden bg-white border-t border-gray-100 shadow-lg"
             >
               <div className="px-4 py-4 space-y-1 max-h-[70vh] overflow-y-auto">
+                {/* Mobile Menu Logo */}
+                <div className="flex items-center justify-center space-x-3 pb-4 mb-4 border-b border-gray-100">
+                  <div className="h-12 w-12 shrink-0">
+                    <img 
+                      src="/logo-removebg.png" 
+                      alt="24th Asoka Group Logo" 
+                      className="h-full w-full object-contain"
+                    />
+                  </div>
+                  <div className="text-center">
+                    <div className="text-sm font-bold text-gray-900">24th Asoka Group</div>
+                    <div className="text-xs text-green-600">Bharat Scouts & Guides</div>
+                  </div>
+                </div>
+
                 {navigation.map((item) => (
                   <div key={item.name}>
                     {/* Main navigation item */}

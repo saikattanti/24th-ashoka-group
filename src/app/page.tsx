@@ -7,6 +7,14 @@ import { Button } from '@/components/ui/Button'
 import { PointerHighlight } from '@/components/ui/PointerHighlight'
 import Link from 'next/link'
 
+// Transparency settings - modify these values to adjust background visibility
+const HERO_BG_TRANSPARENCY = 0.3 // 0.0 = fully visible bg, 1.0 = hidden bg
+const PROJECTS_BG_TRANSPARENCY = 0.2 // 0.0 = fully visible bg, 1.0 = hidden bg
+
+// Shadow effects
+const TEXT_SHADOW = '3px 3px 8px rgba(0, 0, 0, 0.5)'
+const BUTTON_SHADOW = '0 8px 16px rgba(0, 0, 0, 0.2)'
+
 // Statistics data
 const stats = [
   { label: 'Years of Service', value: '85+', icon: Award },
@@ -146,7 +154,7 @@ export default function HomePage() {
       <section 
         className="relative min-h-screen flex items-center justify-center bg-linear-to-br from-green-50 via-white to-green-100"
         style={{
-          backgroundImage: `linear-gradient(rgba(240, 253, 244, 0.4), rgba(255, 255, 255, 0.6), rgba(240, 253, 244, 0.4)), url('/bg-1.png')`,
+          backgroundImage: `linear-gradient(rgba(240, 253, 244, ${HERO_BG_TRANSPARENCY}), rgba(255, 255, 255, ${HERO_BG_TRANSPARENCY * 1.5}), rgba(240, 253, 244, ${HERO_BG_TRANSPARENCY})), url('/bg-1.png')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'
@@ -159,7 +167,7 @@ export default function HomePage() {
             transition={{ duration: 0.8 }}
           >
             {/* Main Title */}
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold mb-6 text-gray-900" style={{ textShadow: '2px 2px 5px grey' }}>
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold mb-6 text-gray-900" style={{ textShadow: TEXT_SHADOW }}>
               <span className="block">24th Asoka Group</span>
               <span className="block text-green-600 text-4xl md:text-5xl lg:text-6xl mt-2">
                 Bharat Scouts & Guides
@@ -168,7 +176,7 @@ export default function HomePage() {
             
             {/* Subtitle */}
             <div className="mb-8">
-              <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading font-bold text-gray-800 mb-4" style={{ textShadow: '2px 2px 5px grey' }}>
+              <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading font-bold text-gray-800 mb-4" style={{ textShadow: TEXT_SHADOW }}>
                 <span className="block text-green-700">Serving Community</span>
                 <PointerHighlight containerClassName="inline-block">
                   <span className="text-purple-600">Protecting Nature</span>
@@ -178,10 +186,10 @@ export default function HomePage() {
             </div>
             
             {/* Description */}
-            <p className="text-lg md:text-xl mb-4 text-gray-600 max-w-4xl mx-auto leading-relaxed" style={{ textShadow: '2px 2px 5px grey' }}>
+            <p className="text-lg md:text-xl mb-4 text-gray-600 max-w-4xl mx-auto leading-relaxed" style={{ textShadow: TEXT_SHADOW }}>
               Since 1936, empowering youth through adventure, service, and environmental stewardship
             </p>
-            <p className="text-base md:text-lg mb-8 text-gray-500 font-medium" style={{ textShadow: '2px 2px 5px grey' }}>
+            <p className="text-base md:text-lg mb-8 text-gray-500 font-medium" style={{ textShadow: TEXT_SHADOW }}>
               South Calcutta  WOSM Member  85+ Years of Excellence
             </p>
           </motion.div>
@@ -197,6 +205,10 @@ export default function HomePage() {
               <Button 
                 size="lg" 
                 className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all"
+                style={{ 
+                  boxShadow: BUTTON_SHADOW,
+                  textShadow: '1px 1px 3px rgba(0, 0, 0, 0.3)'
+                }}
               >
                 Join Our Movement
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -207,6 +219,10 @@ export default function HomePage() {
                 size="lg" 
                 variant="outline" 
                 className="border-2 border-green-600 text-green-600 hover:bg-green-50 px-8 py-4 text-lg font-semibold"
+                style={{ 
+                  boxShadow: BUTTON_SHADOW,
+                  textShadow: '1px 1px 3px rgba(0, 0, 0, 0.2)'
+                }}
               >
                 Our Story
               </Button>
@@ -272,7 +288,7 @@ export default function HomePage() {
       <section 
         className="py-20 bg-linear-to-b from-green-50 to-white"
         style={{
-          backgroundImage: `linear-gradient(rgba(240, 253, 244, 0.5), rgba(255, 255, 255, 0.7)), url('/bg-2.png')`,
+          backgroundImage: `linear-gradient(rgba(240, 253, 244, ${PROJECTS_BG_TRANSPARENCY}), rgba(255, 255, 255, ${PROJECTS_BG_TRANSPARENCY * 1.2})), url('/bg-2.png')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'
@@ -286,10 +302,10 @@ export default function HomePage() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-5xl font-heading font-bold text-gray-800 mb-6">
+            <h2 className="text-3xl md:text-5xl font-heading font-bold text-gray-800 mb-6" style={{ textShadow: TEXT_SHADOW }}>
               Our Impact
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto" style={{ textShadow: TEXT_SHADOW }}>
               Discover how we are making a real difference in communities and environment across Bengal.
             </p>
           </motion.div>
@@ -336,6 +352,10 @@ export default function HomePage() {
               <Button 
                 size="lg" 
                 className="bg-green-600 hover:bg-green-700 text-white px-8 py-4"
+                style={{ 
+                  boxShadow: BUTTON_SHADOW,
+                  textShadow: '1px 1px 3px rgba(0, 0, 0, 0.3)'
+                }}
               >
                 View All Projects
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -354,10 +374,10 @@ export default function HomePage() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">
+            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6" style={{ textShadow: TEXT_SHADOW }}>
               Ready to Begin Your Adventure?
             </h2>
-            <p className="text-xl mb-8 text-green-100 max-w-3xl mx-auto">
+            <p className="text-xl mb-8 text-green-100 max-w-3xl mx-auto" style={{ textShadow: TEXT_SHADOW }}>
               Join thousands of young leaders who have discovered their potential through Scouting. 
               Whether you are 6 or 25, there is a place for you in our movement.
             </p>
@@ -366,6 +386,10 @@ export default function HomePage() {
                 <Button 
                   size="lg" 
                   className="bg-white text-green-700 hover:bg-gray-100 px-8 py-4 text-lg font-semibold"
+                  style={{ 
+                    boxShadow: BUTTON_SHADOW,
+                    textShadow: '1px 1px 3px rgba(0, 0, 0, 0.2)'
+                  }}
                 >
                   Join Today
                   <ArrowRight className="ml-2 h-5 w-5" />
@@ -376,6 +400,10 @@ export default function HomePage() {
                   size="lg" 
                   variant="outline" 
                   className="border-2 border-white text-white hover:bg-white hover:text-green-700 px-8 py-4 text-lg font-semibold"
+                  style={{ 
+                    boxShadow: BUTTON_SHADOW,
+                    textShadow: '1px 1px 3px rgba(0, 0, 0, 0.3)'
+                  }}
                 >
                   <Phone className="mr-2 h-5 w-5" />
                   Contact Us
