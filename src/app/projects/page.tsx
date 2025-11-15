@@ -18,148 +18,256 @@ const categories = [
 
 // Projects data
 const projects = [
+  // {
+  //   id: 1,
+  //   title: 'Beyond Coal Project',
+  //   category: 'education',
+  //   status: 'ongoing',
+  //   location: 'Palasdiha & Bon Sarakdihi Villages',
+  //   startDate: '2020',
+  //   description: 'Bringing light and education to children in coalfield villages through STEM programs, sustainable development, and alternate skill training.',
+  //   impact: 'Reached 200+ children in displaced coalfield communities',
+  //   image: '/projects/beyond-coal.jpg',
+  //   tags: ['STEM Education', 'Sustainable Livelihoods', 'Rural Development'],
+  //   highlights: [
+  //     'Established mobile learning centers',
+  //     'Trained 50+ young mentors',
+  //     'Created sustainable livelihood programs',
+  //     'Provided educational technology access'
+  //   ]
+  // },
+  // {
+  //   id: 2,
+  //   title: 'Sundarban Conservation',
+  //   category: 'environment',
+  //   status: 'ongoing',
+  //   location: 'Sundarban Delta, West Bengal',
+  //   startDate: '2019',
+  //   description: 'Comprehensive mangrove plantation and pond restoration efforts to protect the world\'s largest delta ecosystem.',
+  //   impact: 'Planted 10,000+ mangroves, restored 15 ponds',
+  //   image: '/projects/sundarban.jpg',
+  //   tags: ['Mangrove Plantation', 'Ecosystem Restoration', 'Climate Action'],
+  //   highlights: [
+  //     'Community-led conservation initiatives',
+  //     'Sustainable fishing practices training',
+  //     'Coastal erosion prevention',
+  //     'Biodiversity monitoring programs'
+  //   ]
+  // },
+  // {
+  //   id: 3,
+  //   title: 'Kotha Initiative',
+  //   category: 'education',
+  //   status: 'ongoing',
+  //   location: 'Remote & Tribal Schools, Bengal',
+  //   startDate: '2018',
+  //   description: 'Interactive digital storytelling program bringing quality education to remote and tribal schools through innovative technology.',
+  //   impact: 'Benefited 500+ students in 25 remote schools',
+  //   image: '/projects/kotha.jpg',
+  //   tags: ['Digital Storytelling', 'Remote Learning', 'Cultural Preservation'],
+  //   highlights: [
+  //     'Developed multilingual content',
+  //     'Trained local teachers',
+  //     'Created interactive learning modules',
+  //     'Preserved local folklore and culture'
+  //   ]
+  // },
+  // {
+  //   id: 4,
+  //   title: 'Cyclone Yaas Relief',
+  //   category: 'disaster',
+  //   status: 'completed',
+  //   location: 'Coastal Bengal',
+  //   startDate: '2021',
+  //   description: 'Emergency relief and rehabilitation efforts following Cyclone Yaas, providing medical aid, food, and temporary shelter.',
+  //   impact: 'Assisted 1,000+ families affected by the cyclone',
+  //   image: '/projects/yaas-relief.jpg',
+  //   tags: ['Emergency Response', 'Medical Aid', 'Community Support'],
+  //   highlights: [
+  //     'Immediate medical assistance',
+  //     'Food and water distribution',
+  //     'Temporary shelter arrangements',
+  //     'Long-term rehabilitation support'
+  //   ]
+  // },
+  // {
+  //   id: 5,
+  //   title: 'My School My Favourite Place',
+  //   category: 'education',
+  //   status: 'ongoing',
+  //   location: 'Rural Bengal',
+  //   startDate: '2017',
+  //   description: 'Campaign to revive school attendance in rural and tribal areas through infrastructure improvement and community engagement.',
+  //   impact: 'Improved attendance in 30+ schools',
+  //   image: '/projects/school-campaign.jpg',
+  //   tags: ['Education Access', 'Infrastructure', 'Community Engagement'],
+  //   highlights: [
+  //     'School infrastructure improvements',
+  //     'Teacher training programs',
+  //     'Parent-community engagement',
+  //     'Learning material distribution'
+  //   ]
+  // },
+  // {
+  //   id: 6,
+  //   title: 'Gulab Gang Women Empowerment',
+  //   category: 'community',
+  //   status: 'ongoing',
+  //   location: 'Kolkata & Surrounding Areas',
+  //   startDate: '2019',
+  //   description: 'Women-led Rover unit empowering female rovers in field leadership and community development initiatives.',
+  //   impact: 'Trained 100+ female leaders',
+  //   image: '/projects/gulab-gang.jpg',
+  //   tags: ['Women Empowerment', 'Leadership Training', 'Community Development'],
+  //   highlights: [
+  //     'Female leadership development',
+  //     'Skill building workshops',
+  //     'Community outreach programs',
+  //     'Mentorship networks'
+  //   ]
+  // },
+  // {
+  //   id: 7,
+  //   title: 'Plastic Cleanup Drive',
+  //   category: 'environment',
+  //   status: 'ongoing',
+  //   location: 'Kolkata Metropolitan Area',
+  //   startDate: '2016',
+  //   description: 'Regular plastic waste collection and environmental awareness campaigns across urban and suburban areas.',
+  //   impact: 'Collected 5+ tons of plastic waste annually',
+  //   image: '/projects/plastic-cleanup.jpg',
+  //   tags: ['Waste Management', 'Environmental Awareness', 'Urban Cleanup'],
+  //   highlights: [
+  //     'Monthly cleanup drives',
+  //     'Waste segregation training',
+  //     'Recycling partnerships',
+  //     'Community awareness campaigns'
+  //   ]
+  // },
+  // {
+  //   id: 8,
+  //   title: 'Blood Donation Camps',
+  //   category: 'community',
+  //   status: 'ongoing',
+  //   location: 'Kolkata & Districts',
+  //   startDate: '2010',
+  //   description: 'Regular blood donation camps and health awareness programs in partnership with local medical institutions.',
+  //   impact: 'Collected 2,000+ units of blood',
+  //   image: '/projects/blood-donation.jpg',
+  //   tags: ['Health Awareness', 'Community Service', 'Medical Support'],
+  //   highlights: [
+  //     'Quarterly blood donation drives',
+  //     'Health screening programs',
+  //     'Medical awareness campaigns',
+  //     'Emergency blood support'
+  //   ]
+  // },
   {
-    id: 1,
-    title: 'Beyond Coal Project',
+    id: 10,
+    title: 'Adventure Excellence Program',
     category: 'education',
     status: 'ongoing',
-    location: 'Palasdiha & Bon Sarakdihi Villages',
-    startDate: '2020',
-    description: 'Bringing light and education to children in coalfield villages through STEM programs, sustainable development, and alternate skill training.',
-    impact: 'Reached 200+ children in displaced coalfield communities',
-    image: '/projects/beyond-coal.jpg',
-    tags: ['STEM Education', 'Sustainable Livelihoods', 'Rural Development'],
+    location: 'Outdoor Training Centers',
+    startDate: '2023',
+    description: 'Comprehensive adventure training and leadership development through challenging outdoor activities.',
+    impact: 'Trained 150+ Scouts in advanced adventure skills',
+    image: '/gallery/pic1.png',
+    tags: ['Adventure Training', 'Leadership', 'Outdoor Skills'],
     highlights: [
-      'Established mobile learning centers',
-      'Trained 50+ young mentors',
-      'Created sustainable livelihood programs',
-      'Provided educational technology access'
+      'Rock climbing and mountaineering',
+      'Wilderness survival training',
+      'Team leadership exercises',
+      'Risk management protocols'
     ]
   },
   {
-    id: 2,
-    title: 'Sundarban Conservation',
+    id: 11,
+    title: 'Habitat Conservation Initiative',
     category: 'environment',
     status: 'ongoing',
-    location: 'Sundarban Delta, West Bengal',
-    startDate: '2019',
-    description: 'Comprehensive mangrove plantation and pond restoration efforts to protect the world\'s largest delta ecosystem.',
-    impact: 'Planted 10,000+ mangroves, restored 15 ponds',
-    image: '/projects/sundarban.jpg',
-    tags: ['Mangrove Plantation', 'Ecosystem Restoration', 'Climate Action'],
+    location: 'Protected Areas, Bengal',
+    startDate: '2023',
+    description: 'Large-scale environmental conservation and wildlife habitat protection programs.',
+    impact: 'Protected 500+ hectares of natural habitat',
+    image: '/gallery/pic2.png',
+    tags: ['Conservation', 'Wildlife Protection', 'Habitat Restoration'],
     highlights: [
-      'Community-led conservation initiatives',
-      'Sustainable fishing practices training',
-      'Coastal erosion prevention',
-      'Biodiversity monitoring programs'
+      'Wildlife corridor restoration',
+      'Community conservation programs',
+      'Biodiversity monitoring',
+      'Sustainable tourism development'
     ]
   },
   {
-    id: 3,
-    title: 'Kotha Initiative',
+    id: 12,
+    title: 'Skills Development Hub',
     category: 'education',
-    status: 'ongoing',
-    location: 'Remote & Tribal Schools, Bengal',
-    startDate: '2018',
-    description: 'Interactive digital storytelling program bringing quality education to remote and tribal schools through innovative technology.',
-    impact: 'Benefited 500+ students in 25 remote schools',
-    image: '/projects/kotha.jpg',
-    tags: ['Digital Storytelling', 'Remote Learning', 'Cultural Preservation'],
-    highlights: [
-      'Developed multilingual content',
-      'Trained local teachers',
-      'Created interactive learning modules',
-      'Preserved local folklore and culture'
-    ]
-  },
-  {
-    id: 4,
-    title: 'Cyclone Yaas Relief',
-    category: 'disaster',
     status: 'completed',
-    location: 'Coastal Bengal',
-    startDate: '2021',
-    description: 'Emergency relief and rehabilitation efforts following Cyclone Yaas, providing medical aid, food, and temporary shelter.',
-    impact: 'Assisted 1,000+ families affected by the cyclone',
-    image: '/projects/yaas-relief.jpg',
-    tags: ['Emergency Response', 'Medical Aid', 'Community Support'],
+    location: 'Training Centers',
+    startDate: '2023',
+    description: 'Comprehensive vocational training and skill development for sustainable livelihoods.',
+    impact: 'Skilled 200+ youth in various trades',
+    image: '/gallery/pic3.png',
+    tags: ['Skills Development', 'Vocational Training', 'Employment'],
     highlights: [
-      'Immediate medical assistance',
-      'Food and water distribution',
-      'Temporary shelter arrangements',
-      'Long-term rehabilitation support'
+      'Technical certification programs',
+      'Entrepreneurship training',
+      'Job placement assistance',
+      'Industry partnerships'
     ]
   },
   {
-    id: 5,
-    title: 'My School My Favourite Place',
+    id: 13,
+    title: 'Community Wellness Program',
+    category: 'community',
+    status: 'ongoing',
+    location: 'Rural Communities',
+    startDate: '2023',
+    description: 'Comprehensive healthcare and wellness initiatives for underserved rural populations.',
+    impact: 'Provided healthcare to 1000+ families',
+    image: '/gallery/pic4.png',
+    tags: ['Healthcare', 'Rural Development', 'Wellness'],
+    highlights: [
+      'Mobile medical units',
+      'Preventive healthcare programs',
+      'Health education campaigns',
+      'Community health workers training'
+    ]
+  },
+  {
+    id: 14,
+    title: 'Excellence Recognition Awards',
+    category: 'community',
+    status: 'ongoing',
+    location: 'Regional Centers',
+    startDate: '2023',
+    description: 'Annual recognition and celebration of outstanding achievements in scouting and service.',
+    impact: 'Recognized 100+ outstanding performers',
+    image: '/gallery/pic5.jpg',
+    tags: ['Recognition', 'Excellence', 'Achievement Awards'],
+    highlights: [
+      'Annual excellence ceremonies',
+      'Leadership awards',
+      'Scholarship programs',
+      'Mentorship opportunities'
+    ]
+  },
+  {
+    id: 15,
+    title: 'Future Leaders Program',
     category: 'education',
     status: 'ongoing',
-    location: 'Rural Bengal',
-    startDate: '2017',
-    description: 'Campaign to revive school attendance in rural and tribal areas through infrastructure improvement and community engagement.',
-    impact: 'Improved attendance in 30+ schools',
-    image: '/projects/school-campaign.jpg',
-    tags: ['Education Access', 'Infrastructure', 'Community Engagement'],
+    location: 'Multiple Training Centers',
+    startDate: '2023',
+    description: 'Comprehensive leadership development and capacity building for emerging young leaders.',
+    impact: 'Developed 250+ future leaders',
+    image: '/gallery/pic6.JPG',
+    tags: ['Leadership Development', 'Capacity Building', 'Youth Empowerment'],
     highlights: [
-      'School infrastructure improvements',
-      'Teacher training programs',
-      'Parent-community engagement',
-      'Learning material distribution'
-    ]
-  },
-  {
-    id: 6,
-    title: 'Gulab Gang Women Empowerment',
-    category: 'community',
-    status: 'ongoing',
-    location: 'Kolkata & Surrounding Areas',
-    startDate: '2019',
-    description: 'Women-led Rover unit empowering female rovers in field leadership and community development initiatives.',
-    impact: 'Trained 100+ female leaders',
-    image: '/projects/gulab-gang.jpg',
-    tags: ['Women Empowerment', 'Leadership Training', 'Community Development'],
-    highlights: [
-      'Female leadership development',
-      'Skill building workshops',
-      'Community outreach programs',
-      'Mentorship networks'
-    ]
-  },
-  {
-    id: 7,
-    title: 'Plastic Cleanup Drive',
-    category: 'environment',
-    status: 'ongoing',
-    location: 'Kolkata Metropolitan Area',
-    startDate: '2016',
-    description: 'Regular plastic waste collection and environmental awareness campaigns across urban and suburban areas.',
-    impact: 'Collected 5+ tons of plastic waste annually',
-    image: '/projects/plastic-cleanup.jpg',
-    tags: ['Waste Management', 'Environmental Awareness', 'Urban Cleanup'],
-    highlights: [
-      'Monthly cleanup drives',
-      'Waste segregation training',
-      'Recycling partnerships',
-      'Community awareness campaigns'
-    ]
-  },
-  {
-    id: 8,
-    title: 'Blood Donation Camps',
-    category: 'community',
-    status: 'ongoing',
-    location: 'Kolkata & Districts',
-    startDate: '2010',
-    description: 'Regular blood donation camps and health awareness programs in partnership with local medical institutions.',
-    impact: 'Collected 2,000+ units of blood',
-    image: '/projects/blood-donation.jpg',
-    tags: ['Health Awareness', 'Community Service', 'Medical Support'],
-    highlights: [
-      'Quarterly blood donation drives',
-      'Health screening programs',
-      'Medical awareness campaigns',
-      'Emergency blood support'
+      'Leadership workshops',
+      'Public speaking training',
+      'Project management skills',
+      'Community engagement programs'
     ]
   }
 ]
@@ -281,9 +389,17 @@ export default function ProjectsPage() {
                 variants={fadeInUp}
                 className="bg-white border border-sage-200 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
               >
-                <div className="h-48 bg-linear-to-br from-primary-400 to-primary-600 flex items-center justify-center">
-                  <div className="text-white text-center p-4">
-                    <h3 className="text-xl font-bold">{project.title}</h3>
+                <div className="h-48 relative overflow-hidden">
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-black/20 hover:bg-black/40 transition-all duration-300"></div>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="text-white text-center p-4">
+                      <h3 className="text-xl font-bold drop-shadow-lg">{project.title}</h3>
+                    </div>
                   </div>
                 </div>
                 
@@ -364,10 +480,17 @@ export default function ProjectsPage() {
             className="bg-white rounded-2xl shadow-xl overflow-hidden"
           >
             <div className="grid lg:grid-cols-2">
-              <div className="h-64 lg:h-full bg-linear-to-br from-yellow-400 to-orange-500 flex items-center justify-center">
-                <div className="text-center text-white p-8">
-                  <BookOpen className="h-16 w-16 mx-auto mb-4" />
-                  <h3 className="text-2xl font-bold">Beyond Coal Project</h3>
+              <div className="h-64 lg:h-full relative overflow-hidden">
+                <img 
+                  src="/projects/beyond-coal.jpg" 
+                  alt="Beyond Coal Project"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+                  <div className="text-center text-white p-8">
+                    <BookOpen className="h-16 w-16 mx-auto mb-4" />
+                    <h3 className="text-2xl font-bold">Beyond Coal Project</h3>
+                  </div>
                 </div>
               </div>
               

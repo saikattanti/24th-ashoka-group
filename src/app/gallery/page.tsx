@@ -32,137 +32,203 @@ const categories = [
 
 // Gallery data
 const galleryItems = [
+  // {
+  //   id: 1,
+  //   title: 'Sandakphu Trek 2023',
+  //   category: 'camps',
+  //   date: 'October 2023',
+  //   location: 'Sandakphu, Darjeeling',
+  //   participants: '25 Scouts & Rovers',
+  //   description: 'Annual high-altitude trekking expedition to the highest peak in West Bengal.',
+  //   image: '/gallery/sandakphu-trek.jpg',
+  //   tags: ['Adventure', 'Trekking', 'Mountain']
+  // },
+  // {
+  //   id: 2,
+  //   title: 'Beyond Coal Project Implementation',
+  //   category: 'service',
+  //   date: 'September 2023',
+  //   location: 'Palasdiha Village',
+  //   participants: '15 Rovers',
+  //   description: 'Setting up mobile learning centers and conducting STEM workshops for coalfield children.',
+  //   image: '/gallery/beyond-coal.jpg',
+  //   tags: ['Education', 'Community Service', 'STEM']
+  // },
+  // {
+  //   id: 3,
+  //   title: 'Mangrove Plantation Drive',
+  //   category: 'environment',
+  //   date: 'August 2023',
+  //   location: 'Sundarban Delta',
+  //   participants: '30 Cubs, Scouts & Rovers',
+  //   description: 'Large-scale mangrove plantation initiative to restore coastal ecosystem.',
+  //   image: '/gallery/mangrove-plantation.jpg',
+  //   tags: ['Environment', 'Conservation', 'Sundarban']
+  // },
+  // {
+  //   id: 4,
+  //   title: 'First Aid Training Workshop',
+  //   category: 'training',
+  //   date: 'July 2023',
+  //   location: '24th Asoka Group HQ',
+  //   participants: '40 Scouts',
+  //   description: 'Comprehensive first aid and emergency response training for all sections.',
+  //   image: '/gallery/first-aid-training.jpg',
+  //   tags: ['Training', 'First Aid', 'Emergency Response']
+  // },
+  // {
+  //   id: 5,
+  //   title: 'Prime Minister Shield Award 2010',
+  //   category: 'awards',
+  //   date: 'December 2010',
+  //   location: 'New Delhi',
+  //   participants: 'Group Leadership',
+  //   description: 'Receiving the prestigious Prime Minister Shield Award for excellence in scouting.',
+  //   image: '/gallery/pm-shield-award.jpg',
+  //   tags: ['Award', 'Recognition', 'Achievement']
+  // },
+  // {
+  //   id: 6,
+  //   title: 'Cyclone Yaas Relief Operations',
+  //   category: 'service',
+  //   date: 'May 2021',
+  //   location: 'Coastal Bengal',
+  //   participants: '50 Rovers',
+  //   description: 'Emergency relief distribution and medical aid during post-cyclone recovery.',
+  //   image: '/gallery/yaas-relief.jpg',
+  //   tags: ['Disaster Relief', 'Emergency Response', 'Community Support']
+  // },
+  // {
+  //   id: 7,
+  //   title: 'Cubs Nature Walk',
+  //   category: 'camps',
+  //   date: 'March 2023',
+  //   location: 'Eco Park, Kolkata',
+  //   participants: '20 Cubs',
+  //   description: 'Educational nature walk teaching young scouts about local flora and fauna.',
+  //   image: '/gallery/cubs-nature-walk.jpg',
+  //   tags: ['Nature', 'Education', 'Cubs']
+  // },
+  // {
+  //   id: 8,
+  //   title: 'Tree Plantation Campaign',
+  //   category: 'environment',
+  //   date: 'June 2023',
+  //   location: 'Multiple Locations, Kolkata',
+  //   participants: '35 Scouts & Rovers',
+  //   description: 'City-wide tree plantation drive as part of World Environment Day celebrations.',
+  //   image: '/gallery/tree-plantation.jpg',
+  //   tags: ['Environment', 'Tree Plantation', 'World Environment Day']
+  // },
+  // {
+  //   id: 9,
+  //   title: 'Leadership Training Camp',
+  //   category: 'training',
+  //   date: 'January 2023',
+  //   location: 'Mulkharka Lake, Nepal',
+  //   participants: '18 Senior Scouts',
+  //   description: 'International leadership development camp focusing on advanced scouting skills.',
+  //   image: '/gallery/leadership-camp.jpg',
+  //   tags: ['Leadership', 'International', 'Advanced Training']
+  // },
+  // {
+  //   id: 10,
+  //   title: 'Blood Donation Drive',
+  //   category: 'service',
+  //   date: 'February 2023',
+  //   location: 'Kolkata Medical College',
+  //   participants: '25 Rovers',
+  //   description: 'Quarterly blood donation camp organized in partnership with local medical institutions.',
+  //   image: '/gallery/blood-donation.jpg',
+  //   tags: ['Health', 'Community Service', 'Medical Support']
+  // },
+  // {
+  //   id: 11,
+  //   title: 'Group Foundation Day 1936',
+  //   category: 'heritage',
+  //   date: '1936',
+  //   location: 'Dover Terrace, Kolkata',
+  //   participants: 'Founding Members',
+  //   description: 'Historic photograph from the founding of 24th Asoka Group in 1936.',
+  //   image: '/gallery/foundation-1936.jpg',
+  //   tags: ['Heritage', 'History', 'Foundation']
+  // },
+  // {
+  //   id: 12,
+  //   title: 'Kotha Digital Storytelling',
+  //   category: 'service',
+  //   date: 'April 2023',
+  //   location: 'Remote Tribal School',
+  //   participants: '12 Rovers',
+  //   description: 'Implementing interactive digital storytelling programs in remote tribal schools.',
+  //   image: '/gallery/kotha-storytelling.jpg',
+  //   tags: ['Education', 'Digital Innovation', 'Tribal Outreach']
+  // },
   {
-    id: 1,
-    title: 'Sandakphu Trek 2023',
-    category: 'camps',
+    id: 25,
+    title: 'Adventure Excellence Training',
+    category: 'training',
+    date: 'November 2023',
+    location: 'Mountain Training Base',
+    participants: '30 Scouts & Rovers',
+    description: 'Advanced adventure training program showcasing excellence in mountaineering and outdoor leadership skills.',
+    image: '/gallery/pic1.png',
+    tags: ['Adventure', 'Excellence', 'Leadership Training']
+  },
+  {
+    id: 26,
+    title: 'Environmental Conservation Day',
+    category: 'environment',
     date: 'October 2023',
-    location: 'Sandakphu, Darjeeling',
-    participants: '25 Scouts & Rovers',
-    description: 'Annual high-altitude trekking expedition to the highest peak in West Bengal.',
-    image: '/gallery/sandakphu-trek.jpg',
-    tags: ['Adventure', 'Trekking', 'Mountain']
+    location: 'Protected Wildlife Area',
+    participants: '40 Cubs, Scouts & Rovers',
+    description: 'Major environmental conservation initiative with habitat restoration and wildlife protection activities.',
+    image: '/gallery/pic2.png',
+    tags: ['Environment', 'Conservation', 'Wildlife Protection']
   },
   {
-    id: 2,
-    title: 'Beyond Coal Project Implementation',
-    category: 'service',
+    id: 27,
+    title: 'Skills Development Workshop',
+    category: 'training',
     date: 'September 2023',
-    location: 'Palasdiha Village',
-    participants: '15 Rovers',
-    description: 'Setting up mobile learning centers and conducting STEM workshops for coalfield children.',
-    image: '/gallery/beyond-coal.jpg',
-    tags: ['Education', 'Community Service', 'STEM']
+    location: 'Vocational Training Center',
+    participants: '25 Young Scouts',
+    description: 'Comprehensive skills development and vocational training workshop for career advancement.',
+    image: '/gallery/pic3.png',
+    tags: ['Skills', 'Vocational Training', 'Career Development']
   },
   {
-    id: 3,
-    title: 'Mangrove Plantation Drive',
-    category: 'environment',
+    id: 28,
+    title: 'Community Health Outreach',
+    category: 'service',
     date: 'August 2023',
-    location: 'Sundarban Delta',
-    participants: '30 Cubs, Scouts & Rovers',
-    description: 'Large-scale mangrove plantation initiative to restore coastal ecosystem.',
-    image: '/gallery/mangrove-plantation.jpg',
-    tags: ['Environment', 'Conservation', 'Sundarban']
+    location: 'Rural Community Centers',
+    participants: '20 Rovers & Leaders',
+    description: 'Mobile health clinic and wellness program bringing healthcare services to remote rural areas.',
+    image: '/gallery/pic4.png',
+    tags: ['Health', 'Community Service', 'Rural Outreach']
   },
   {
-    id: 4,
-    title: 'First Aid Training Workshop',
-    category: 'training',
-    date: 'July 2023',
-    location: '24th Asoka Group HQ',
-    participants: '40 Scouts',
-    description: 'Comprehensive first aid and emergency response training for all sections.',
-    image: '/gallery/first-aid-training.jpg',
-    tags: ['Training', 'First Aid', 'Emergency Response']
-  },
-  {
-    id: 5,
-    title: 'Prime Minister Shield Award 2010',
+    id: 29,
+    title: 'Annual Excellence Awards 2023',
     category: 'awards',
-    date: 'December 2010',
-    location: 'New Delhi',
-    participants: 'Group Leadership',
-    description: 'Receiving the prestigious Prime Minister Shield Award for excellence in scouting.',
-    image: '/gallery/pm-shield-award.jpg',
-    tags: ['Award', 'Recognition', 'Achievement']
+    date: 'July 2023',
+    location: 'Regional Headquarters',
+    participants: 'Outstanding Achievers',
+    description: 'Grand celebration recognizing exceptional achievements and contributions in scouting and community service.',
+    image: '/gallery/pic5.jpg',
+    tags: ['Awards', 'Excellence', 'Recognition', 'Achievement']
   },
   {
-    id: 6,
-    title: 'Cyclone Yaas Relief Operations',
-    category: 'service',
-    date: 'May 2021',
-    location: 'Coastal Bengal',
-    participants: '50 Rovers',
-    description: 'Emergency relief distribution and medical aid during post-cyclone recovery.',
-    image: '/gallery/yaas-relief.jpg',
-    tags: ['Disaster Relief', 'Emergency Response', 'Community Support']
-  },
-  {
-    id: 7,
-    title: 'Cubs Nature Walk',
-    category: 'camps',
-    date: 'March 2023',
-    location: 'Eco Park, Kolkata',
-    participants: '20 Cubs',
-    description: 'Educational nature walk teaching young scouts about local flora and fauna.',
-    image: '/gallery/cubs-nature-walk.jpg',
-    tags: ['Nature', 'Education', 'Cubs']
-  },
-  {
-    id: 8,
-    title: 'Tree Plantation Campaign',
-    category: 'environment',
-    date: 'June 2023',
-    location: 'Multiple Locations, Kolkata',
-    participants: '35 Scouts & Rovers',
-    description: 'City-wide tree plantation drive as part of World Environment Day celebrations.',
-    image: '/gallery/tree-plantation.jpg',
-    tags: ['Environment', 'Tree Plantation', 'World Environment Day']
-  },
-  {
-    id: 9,
-    title: 'Leadership Training Camp',
+    id: 30,
+    title: 'Leadership Summit 2023',
     category: 'training',
-    date: 'January 2023',
-    location: 'Mulkharka Lake, Nepal',
-    participants: '18 Senior Scouts',
-    description: 'International leadership development camp focusing on advanced scouting skills.',
-    image: '/gallery/leadership-camp.jpg',
-    tags: ['Leadership', 'International', 'Advanced Training']
-  },
-  {
-    id: 10,
-    title: 'Blood Donation Drive',
-    category: 'service',
-    date: 'February 2023',
-    location: 'Kolkata Medical College',
-    participants: '25 Rovers',
-    description: 'Quarterly blood donation camp organized in partnership with local medical institutions.',
-    image: '/gallery/blood-donation.jpg',
-    tags: ['Health', 'Community Service', 'Medical Support']
-  },
-  {
-    id: 11,
-    title: 'Group Foundation Day 1936',
-    category: 'heritage',
-    date: '1936',
-    location: 'Dover Terrace, Kolkata',
-    participants: 'Founding Members',
-    description: 'Historic photograph from the founding of 24th Asoka Group in 1936.',
-    image: '/gallery/foundation-1936.jpg',
-    tags: ['Heritage', 'History', 'Foundation']
-  },
-  {
-    id: 12,
-    title: 'Kotha Digital Storytelling',
-    category: 'service',
-    date: 'April 2023',
-    location: 'Remote Tribal School',
-    participants: '12 Rovers',
-    description: 'Implementing interactive digital storytelling programs in remote tribal schools.',
-    image: '/gallery/kotha-storytelling.jpg',
-    tags: ['Education', 'Digital Innovation', 'Tribal Outreach']
+    date: 'June 2023',
+    location: 'Leadership Development Center',
+    participants: '35 Senior Scouts & Rovers',
+    description: 'Premier leadership development summit focusing on advanced management skills and community leadership.',
+    image: '/gallery/pic6.JPG',
+    tags: ['Leadership', 'Summit', 'Management', 'Development']
   }
 ]
 
@@ -297,42 +363,53 @@ export default function GalleryPage() {
             variants={stagger}
             initial="initial"
             animate="animate"
-            className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
           >
-            {filteredItems.map((item, index) => (
-              <motion.div
-                key={item.id}
-                variants={fadeInUp}
-                className="group cursor-pointer"
-                onClick={() => openLightbox(item, index)}
-              >
-                <div className="relative overflow-hidden rounded-xl bg-linear-to-br from-primary-400 to-primary-600 aspect-square">
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all duration-300"></div>
-                  <div className="absolute inset-0 p-4 flex flex-col justify-end text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <h3 className="font-heading font-bold text-lg mb-2 line-clamp-2">
-                      {item.title}
-                    </h3>
-                    <div className="flex items-center text-sm mb-1">
-                      <Calendar className="h-4 w-4 mr-1" />
-                      {item.date}
-                    </div>
-                    <div className="flex items-center text-sm">
-                      <MapPin className="h-4 w-4 mr-1" />
-                      {item.location}
-                    </div>
-                  </div>
-                  {/* Placeholder for actual image */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-white text-center p-4">
-                      <div className="w-12 h-12 mx-auto mb-2 bg-white/20 rounded-full flex items-center justify-center">
-                        <Filter className="h-6 w-6" />
+            {filteredItems.map((item, index) => {
+              // Determine aspect ratio based on image filename
+              let aspectRatio = "aspect-[4/3]"; // default
+              if (item.image.includes('pic1.png')) {
+                aspectRatio = "aspect-[727/525]"; // ~1.38:1
+              } else if (item.image.includes('pic2.png')) {
+                aspectRatio = "aspect-[919/612]"; // ~1.5:1
+              } else if (item.image.includes('pic3.png') || item.image.includes('pic4.png') || item.image.includes('pic6.JPG')) {
+                aspectRatio = "aspect-[3/2]"; // 6000x4000 = 3:2
+              } else if (item.image.includes('pic5.jpg')) {
+                aspectRatio = "aspect-[16/9]"; // 1280x720 = 16:9
+              }
+              
+              return (
+                <motion.div
+                  key={item.id}
+                  variants={fadeInUp}
+                  className="group cursor-pointer"
+                  onClick={() => openLightbox(item, index)}
+                >
+                  <div className={`relative overflow-hidden rounded-xl ${aspectRatio}`}>
+                    {/* Actual Image */}
+                    <img 
+                      src={item.image} 
+                      alt={item.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all duration-300"></div>
+                    <div className="absolute inset-0 p-4 flex flex-col justify-end text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <h3 className="font-heading font-bold text-lg mb-2 line-clamp-2">
+                        {item.title}
+                      </h3>
+                      <div className="flex items-center text-sm mb-1">
+                        <Calendar className="h-4 w-4 mr-1" />
+                        {item.date}
                       </div>
-                      <div className="font-medium text-sm">{item.title}</div>
+                      <div className="flex items-center text-sm">
+                        <MapPin className="h-4 w-4 mr-1" />
+                        {item.location}
+                      </div>
                     </div>
                   </div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              )
+            })}
           </motion.div>
         </div>
       </section>
@@ -369,13 +446,12 @@ export default function GalleryPage() {
 
               {/* Image */}
               <div className="relative">
-                <div className="aspect-video bg-linear-to-br from-primary-400 to-primary-600 flex items-center justify-center">
-                  <div className="text-white text-center p-8">
-                    <div className="w-16 h-16 mx-auto mb-4 bg-white/20 rounded-full flex items-center justify-center">
-                      <Filter className="h-8 w-8" />
-                    </div>
-                    <div className="text-xl font-medium">{selectedImage.title}</div>
-                  </div>
+                <div className="aspect-video bg-gray-100">
+                  <img 
+                    src={selectedImage.image} 
+                    alt={selectedImage.title}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
 
                 {/* Navigation Buttons */}

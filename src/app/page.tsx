@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowRight, Users, TreePine, Award, MapPin, Phone, Heart, Star, Target, Globe } from 'lucide-react'
+import { ArrowRight, Users, TreePine, Award, MapPin, Phone, Heart, Star, Target, Globe, DollarSign, Gift } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { PointerHighlight } from '@/components/ui/PointerHighlight'
 import Link from 'next/link'
@@ -23,30 +23,60 @@ const stats = [
   { label: 'Communities Served', value: '25+', icon: MapPin },
 ]
 
-// Featured projects
-const featuredProjects = [
+// Featured impact cards with gallery images
+const impactCards = [
   {
     title: 'Beyond Coal Project',
     description: 'Bringing light and education to children in coalfield villages through STEM programs.',
     impact: '200+ children reached',
     icon: Target,
-    color: 'bg-blue-50 border-blue-200 text-blue-800'
+    image: '/gallery/pic1.png',
+    category: 'Education & Community'
   },
   {
     title: 'Sundarban Conservation',
     description: 'Mangrove plantation and ecosystem restoration to protect the delta.',
     impact: '10,000+ mangroves planted',
     icon: TreePine,
-    color: 'bg-green-50 border-green-200 text-green-800'
+    image: '/gallery/pic2.png',
+    category: 'Environmental Protection'
+  },
+  {
+    title: 'Adventure & Training',
+    description: 'High-altitude treks and outdoor adventures building character and leadership.',
+    impact: '150+ Scouts trained',
+    icon: Star,
+    image: '/gallery/pic3.png',
+    category: 'Adventure & Skills'
   },
   {
     title: 'Community Service',
     description: 'Regular blood drives, health camps, and disaster relief operations.',
     impact: '1,000+ families helped',
     icon: Heart,
-    color: 'bg-red-50 border-red-200 text-red-800'
+    image: '/gallery/pic4.png',
+    category: 'Community Support'
+  },
+  {
+    title: 'Awards & Recognition',
+    description: 'Celebrating excellence in scouting and community service achievements.',
+    impact: 'Prime Minister Shield',
+    icon: Award,
+    image: '/gallery/pic5.jpg',
+    category: 'Achievements'
+  },
+  {
+    title: 'Youth Development',
+    description: 'Comprehensive training programs developing future leaders and responsible citizens.',
+    impact: '500+ youth empowered',
+    icon: Users,
+    image: '/gallery/pic6.JPG',
+    category: 'Leadership Training'
   }
 ]
+
+// Donation amounts
+const donationAmounts = [500, 1000, 2500, 5000]
 
 // Animation variants
 const fadeInUp = {
@@ -284,6 +314,125 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Donation Section */}
+      <section className="py-20 bg-green-600 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-5xl font-heading font-bold mb-6" style={{ textShadow: TEXT_SHADOW }}>
+              Support Our Mission
+            </h2>
+            <p className="text-xl text-green-100 max-w-3xl mx-auto" style={{ textShadow: TEXT_SHADOW }}>
+              Your donation helps us continue serving the community and empowering youth through adventure and service.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Donation Form */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="bg-white rounded-2xl p-8 text-gray-900"
+            >
+              <div className="flex items-center mb-6">
+                <div className="p-3 bg-green-100 rounded-full mr-4">
+                  <Heart className="h-6 w-6 text-green-600" />
+                </div>
+                <h3 className="text-2xl font-heading font-bold">Make a Donation</h3>
+              </div>
+
+              <div className="grid grid-cols-2 gap-3 mb-6">
+                {donationAmounts.map((amount) => (
+                  <button
+                    key={amount}
+                    className="p-3 border-2 border-green-200 rounded-lg hover:border-green-500 hover:bg-green-50 transition-colors text-center font-semibold"
+                  >
+                    ₹{amount.toLocaleString()}
+                  </button>
+                ))}
+              </div>
+
+              <div className="mb-4">
+                <input
+                  type="number"
+                  placeholder="Enter custom amount"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:border-green-500 focus:outline-none"
+                />
+              </div>
+
+              <div className="mb-4">
+                <input
+                  type="email"
+                  placeholder="Your email address"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:border-green-500 focus:outline-none"
+                />
+              </div>
+
+              <Link href="/donate">
+                <Button 
+                  size="lg" 
+                  className="w-full bg-green-600 hover:bg-green-700 text-white py-3"
+                  style={{ boxShadow: BUTTON_SHADOW }}
+                >
+                  <DollarSign className="mr-2 h-5 w-5" />
+                  Donate Now
+                </Button>
+              </Link>
+            </motion.div>
+
+            {/* Impact Stories */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="space-y-6"
+            >
+              <div className="bg-green-700 rounded-xl p-6">
+                <div className="flex items-center mb-4">
+                  <Gift className="h-8 w-8 text-green-300 mr-3" />
+                  <h4 className="text-xl font-bold">Recent Impact</h4>
+                </div>
+                <div className="space-y-4">
+                  <div>
+                    <h5 className="font-semibold text-green-200">Beyond Coal Project</h5>
+                    <p className="text-green-100">₹75,000 raised • 100+ families supported</p>
+                  </div>
+                  <div>
+                    <h5 className="font-semibold text-green-200">Scout Equipment Fund</h5>
+                    <p className="text-green-100">₹45,000 raised • 25 Scouts equipped</p>
+                  </div>
+                  <div>
+                    <h5 className="font-semibold text-green-200">Disaster Relief Training</h5>
+                    <p className="text-green-100">₹30,000 raised • 50+ Rovers trained</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="text-center">
+                <Link href="/donate">
+                  <Button 
+                    variant="outline" 
+                    size="lg"
+                    className="border-2 border-white text-white hover:bg-white hover:text-green-600 px-8 py-3"
+                  >
+                    View Full Donation Page
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                </Link>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Featured Projects Section */}
       <section 
         className="py-20 bg-linear-to-b from-green-50 to-white"
@@ -310,32 +459,60 @@ export default function HomePage() {
             </p>
           </motion.div>
 
+          {/* Impact Cards with Gallery Backgrounds */}
           <motion.div
             variants={stagger}
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
-            className="grid md:grid-cols-3 gap-8"
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
           >
-            {featuredProjects.map((project, index) => (
+            {impactCards.map((card, index) => (
               <motion.div
                 key={index}
                 variants={fadeInUp}
-                className={`p-8 rounded-2xl border-2 ${project.color} hover:shadow-lg transition-all duration-300`}
+                className="group relative overflow-hidden rounded-2xl aspect-4/3 hover:shadow-2xl transition-all duration-500 cursor-pointer"
               >
-                <div className="flex items-center mb-4">
-                  <div className="p-3 bg-white rounded-full mr-4">
-                    <project.icon className="h-6 w-6" />
+                {/* Background Image */}
+                <div 
+                  className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                  style={{ backgroundImage: `url('${card.image}')` }}
+                />
+                
+                {/* Gradient Overlay */}
+                <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/50 to-black/20" />
+                
+                {/* Content */}
+                <div className="relative h-full flex flex-col justify-end p-6 text-white">
+                  {/* Icon and Category */}
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center space-x-2">
+                      <div className="p-2 bg-white/20 backdrop-blur-sm rounded-lg">
+                        <card.icon className="h-5 w-5 text-white" />
+                      </div>
+                      <span className="text-sm font-medium text-gray-200">{card.category}</span>
+                    </div>
                   </div>
-                  <h3 className="text-xl font-heading font-bold">
-                    {project.title}
+                  
+                  {/* Title */}
+                  <h3 className="text-xl font-heading font-bold mb-2 group-hover:text-green-300 transition-colors">
+                    {card.title}
                   </h3>
-                </div>
-                <p className="mb-4 leading-relaxed">
-                  {project.description}
-                </p>
-                <div className="bg-white bg-opacity-50 px-4 py-2 rounded-lg">
-                  <div className="font-semibold">{project.impact}</div>
+                  
+                  {/* Description */}
+                  <p className="text-sm text-gray-200 mb-3 line-clamp-2 group-hover:line-clamp-none transition-all duration-300">
+                    {card.description}
+                  </p>
+                  
+                  {/* Impact Badge */}
+                  <div className="inline-flex items-center px-3 py-1 bg-green-600/90 backdrop-blur-sm rounded-full text-xs font-semibold text-white w-fit">
+                    {card.impact}
+                  </div>
+                  
+                  {/* Hover Effect - Additional Info */}
+                  <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+                  </div>
                 </div>
               </motion.div>
             ))}
